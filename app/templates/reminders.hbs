@@ -1,6 +1,8 @@
 <h1>Reminders</h1>
 
 <div class='spec-reminders'>
-  {{reminder-item}}
+  {{#each reminders as |reminder|}}
+    {{reminder-item reminder=reminder}}
+  {{/each}}
 </div>
 {{outlet}}
