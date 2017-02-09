@@ -23,10 +23,10 @@ test('clicking on an individual item', function(assert) {
   server.createList('reminder', 5);
 
   visit('/');
-  click('div.spec-reminder-item:first');
+  click('.spec-reminder-item:first');
 
   andThen(function() {
-    assert.equal(currentURL(), '/reminders/1', 'should redirect to reminders/id');
-    assert.equal(Ember.$('.spec-reminder-item:first').text().trim(), Ember.$('.spec-reminder-title').text().trim(), 'should select text');
+    assert.equal(currentURL(), '/reminders/1', 'should redirect to the first item');
+    assert.equal(Ember.$('.spec-reminder-item:first').find('.spec-reminder-title').text().trim(), Ember.$('.spec-reminder-title').text().trim(), 'should find the title of the reminder item');
   });
 });
