@@ -15,7 +15,7 @@ test('viewing the homepage', function(assert) {
   andThen(function() {
     assert.equal(currentURL(), '/reminders', 'should redirect to /reminders');
     // we chose to complete issue 2 before 1
-    // assert.equal(Ember.$('.spec-reminder-item').length, 5, 'should render 5 reminders');
+    assert.equal(Ember.$('.spec-reminder-item').length, 5, 'should render 5 reminders');
   });
 });
 
