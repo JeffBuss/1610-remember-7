@@ -19,7 +19,7 @@ test('viewing the homepage', function(assert) {
   });
 });
 
-skip('clicking on an individual item', function(assert) {
+('clicking on an individual item', function(assert) {
   server.createList('reminder', 5);
 
   visit('/');
