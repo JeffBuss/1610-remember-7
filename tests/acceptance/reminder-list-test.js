@@ -40,8 +40,8 @@ test('clicking to add a new note', function(assert) {
     assert.equal(find('input').text(), '', "the input fields are empty" );
   })
 
-  fillIn('input.title.value', 'Words');
+  fillIn('input.value', 'Words');
   andThen(function() {
-    assert.equal(find('input.title.value').text(), 'Words', "the input field has text")
+    assert.equal(this.$('input').text(), 'Words', "the input field has text")
   })
 })

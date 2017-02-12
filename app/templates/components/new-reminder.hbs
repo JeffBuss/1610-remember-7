@@ -2,20 +2,20 @@
   action 'newReminder'
   on='submit'
 }}>
-  <label>
-    Title: {{
+  <label>Title:</label>
+    {{
       input
       type='text'
       value=title
     }}
-  </label>
   <label>
-    Date: {{
+    Date:
+  </label>
+    {{
       input
       type='date'
       value=date
     }}
-  </label>
   <label>
     Notes: {{
       textarea
