@@ -2,12 +2,13 @@
 
 {{outlet}}
 
-{{#link-to 'reminders.new'}}
-<button>Add New Reminder</button>
-{{/link-to}}
 
 <div class='spec-reminders'>
   {{#each model as |reminder|}}
     {{reminder-item reminder=reminder}}
   {{/each}}
 </div>
+
+{{#link-to 'reminders.new'}}
+<button>Add New Reminder</button>
+{{/link-to}}
