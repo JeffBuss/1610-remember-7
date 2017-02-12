@@ -1,0 +1,7 @@
+body {
+  background-color: aliceblue;
+}
+
+div.active {
+  background-color: wheat;
+}
