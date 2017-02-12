@@ -30,3 +30,12 @@ test('clicking on an individual item', function(assert) {
     assert.equal(Ember.$('.spec-reminder-item:first').text().trim(), Ember.$('.spec-reminder-title:first').text().trim(), 'should find the title of the reminder item');
   });
 });
+
+test('clicking to add a new note', function(assert) {
+  visit('/');
+  click('button');
+
+  andThen(function() {
+    assert.equal(currentURL(), '/reminders/new', 'should redirect to add a new item')
+  })
+})
