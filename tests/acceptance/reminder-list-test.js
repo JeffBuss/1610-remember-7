@@ -36,6 +36,12 @@ test('clicking to add a new note', function(assert) {
   click('button');
 
   andThen(function() {
-    assert.equal(currentURL(), '/reminders/new', 'should redirect to add a new item')
+    assert.equal(currentURL(), '/reminders/new', 'should redirect to add a new item');
+    assert.equal(find('input').text(), '', "the input fields are empty" );
+  })
+
+  fillIn('input.title.value', 'Words');
+  andThen(function() {
+    assert.equal(find('input.title.value').text(), 'Words', "the input field has text")
   })
 })
