@@ -14,19 +14,19 @@ test('viewing the homepage', function(assert) {
 
   andThen(function() {
     assert.equal(currentURL(), '/reminders', 'should redirect to /reminders');
-    // we chose to complete issue 2 before 1
     assert.equal(Ember.$('.spec-reminder-item').length, 5, 'should render 5 reminders');
   });
 });
 
-skip('clicking on an individual item', function(assert) {
+test('clicking on an individual item', function(assert) {
   server.createList('reminder', 5);
 
   visit('/');
   click('.spec-reminder-item:first');
 
   andThen(function() {
-    assert.equal(currentURL(), '/1');
-    assert.equal(Ember.$('.spec-reminder-item:first').text().trim(), Ember.$('.spec-reminder-title').text().trim());
+    assert.equal(currentURL(), '/reminders/1', 'should redirect to the first item');
+    assert.equal(Ember.$('.spec-reminder-title:first').text().trim(), Ember.$('.spec-reminder-title:first').text().trim(), 'should find the title of the reminder item');
+    assert.equal(Ember.$('.active').length, 2, 'the reminder clicked has an active class')
   });
 });

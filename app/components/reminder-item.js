@@ -1,5 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  classNames: ['spec-reminder-item'],
+  isActive: false,
+  actions: {
+    toggleDisplay() {
+      this.toggleProperty('isActive')
+    }
+  }
 });
