@@ -14,7 +14,6 @@ test('viewing the homepage', function(assert) {
 
   andThen(function() {
     assert.equal(currentURL(), '/reminders', 'should redirect to /reminders');
-    // we chose to complete issue 2 before 1
     assert.equal(Ember.$('.spec-reminder-item').length, 5, 'should render 5 reminders');
   });
 });
@@ -28,5 +27,6 @@ test('clicking on an individual item', function(assert) {
   andThen(function() {
     assert.equal(currentURL(), '/reminders/1', 'should redirect to the first item');
     assert.equal(Ember.$('.spec-reminder-title:first').text().trim(), Ember.$('.spec-reminder-title:first').text().trim(), 'should find the title of the reminder item');
+    assert.equal(Ember.$('.active').length, 2, 'the reminder clicked has an active class')
   });
 });
