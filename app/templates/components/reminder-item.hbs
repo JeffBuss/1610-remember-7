@@ -1,14 +1,5 @@
-<div class="spec-reminder-item">
-  {{#link-to "reminders.reminder" reminder }}
-    <a {{action "toggleDisplay"}} class="item {{if isActive "active"}}" >
-      <h2 class="spec-reminder-title">
-        {{reminder.title}}
-      </h2>
-    </a>
-    <p>{{reminder.date}}</p>
-    <p class="spec-reminder-notes">
-      {{reminder.notes}}
-    </p>
-    <p>{{reminder.pinned}}</p>
-  {{/link-to}}
-</div>
+{{#link-to "reminders.reminder" reminder }}
+  <h2 class="spec-reminder-title">
+    {{reminder.title}}
+  </h2>
+{{/link-to}}
