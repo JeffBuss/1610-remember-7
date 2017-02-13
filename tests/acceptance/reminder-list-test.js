@@ -55,3 +55,11 @@ test('adding new notes', function(assert) {
     })
   })
 })
+
+test('add new note prompt', function(assert) {
+  visit('/');
+
+  andThen(function() {
+    assert.equal(find('.spec-no-reminder-prompt').length, 1, 'should display a prompt to create a reminder when none are present')
+  })
+})

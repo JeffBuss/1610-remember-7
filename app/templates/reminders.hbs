@@ -2,11 +2,17 @@
 
 {{outlet}}
 
+{{#if model}}
+
 <div class='spec-reminders'>
   {{#each model as |reminder|}}
     {{reminder-item reminder=reminder}}
   {{/each}}
 </div>
+
+{{else}}
+  <p class='spec-no-reminder-prompt'>You have no reminders saved :( Click the New Reminder button below to add your first one!</p>
+{{/if}}
 
 {{#link-to 'reminders.new'}}
 <button class='add-reminder-btn'>Add New Reminder</button>
