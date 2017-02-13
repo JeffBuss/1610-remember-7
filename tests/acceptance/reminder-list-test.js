@@ -45,15 +45,13 @@ test('adding new notes', function(assert) {
   visit('/reminders/new')
 
   andThen(function() {
-    fillIn('.spec-title-input', 'Stay Thirsty');
-    // fillIn('.spec-date-input', '2017-2-2');
-    // fillIn('.spec-note-input', 'Brenna owes me an organic gatorade');
+    fillIn('.spec-title-input', 'Brenna owes me an organic gatorade');
 
     click('.spec-submit-new-btn');
 
     andThen(function() {
       assert.equal(find('.spec-reminder-item').length, 1, 'should append a new reminder to the page when clicked')
-      // assert.equal(find('.spec-reminder-title').text(), 'Stay Thirsty', 'should display the correct title')
+      assert.equal(find('.spec-reminder-title').text().trim(), 'Brenna owes me an organic gatorade', 'should display the correct title')
     })
   })
 })
