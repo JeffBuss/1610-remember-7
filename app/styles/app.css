@@ -1,8 +1,7 @@
-
 body {
   background-color: #fafafa;
 }
 
-.spec-reminder-item a.item.active {
+div.active {
   background-color: wheat;
 }
