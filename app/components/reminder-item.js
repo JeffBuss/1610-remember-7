@@ -8,5 +8,3 @@ export default Ember.Component.extend({
     }
   }
 });
-
-// classNames: ['spec-reminder-item'],
