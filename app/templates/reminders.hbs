@@ -2,7 +2,6 @@
 
 {{outlet}}
 
-
 <div class='spec-reminders'>
   {{#each model as |reminder|}}
     {{reminder-item reminder=reminder}}
@@ -10,5 +9,5 @@
 </div>
 
 {{#link-to 'reminders.new'}}
-<button>Add New Reminder</button>
+<button class='add-reminder-btn'>Add New Reminder</button>
 {{/link-to}}
