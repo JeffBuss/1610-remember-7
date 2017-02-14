@@ -6,5 +6,7 @@
     <p class="spec-reminder-notes">
       {{model.notes}}
     </p>
-    <button>Edit</button>
+    {{#link-to "edit" edit}}
+      <button {{action "editReminder"}} class="edit-button">Edit</button>
+    {{/link-to}}
 </div>
