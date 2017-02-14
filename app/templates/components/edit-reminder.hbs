@@ -1,7 +1,5 @@
-<form {{
-  action 'editReminder'
-  on='submit'
-}}>
-<p>Words are here</p>
-  <button {{action 'editReminder'}} class='spec-submit-new-btn'>Save</button>
-</form>
+
+<h2>Title</h2>
+  <div {{action 'saveReminder' preventDefault=false}} class='spec-submit-new-btn'>
+    <button>Save</button>
+  </div>
