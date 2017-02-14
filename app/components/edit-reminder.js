@@ -6,7 +6,7 @@ export default Ember.Component.extend({
   date: '',
   notes: '',
 
-  action:  {
+  actions:  {
     editReminder() {
       console.log("Button does thing!");
     }
