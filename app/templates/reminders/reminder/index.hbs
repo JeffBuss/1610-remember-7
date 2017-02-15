@@ -10,6 +10,7 @@
       <button class="edit-button">Edit</button>
     {{/link-to}}
 
-    {{delete-reminder model=model}}
-
+    {{#link-to 'reminders'}}
+      {{delete-reminder model=model}}
+    {{/link-to}}
 </div>
