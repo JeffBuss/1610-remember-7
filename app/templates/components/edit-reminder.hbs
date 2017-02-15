@@ -1,11 +1,30 @@
-<!-- <h2 class="spec-reminder-title">
-  {{model.title}}
-</h2>
-<p>{{model.date}}</p>
-<p class="spec-reminder-notes">
-  {{model.notes}}
-</p> -->
+<form {{
+  action 'saveReminder'
+  on='submit'
+}}>
+  <label>
+    Title:
+    </label>
+    <input
+    class='spec-title-input'
+    type='text'
+    value={{model.title}} />
 
-<div  class='spec-submit-new-btn'>
+  <label>
+    Date:
+  </label>
+    {{input
+    class='spec-date-input'
+    type='date'
+    value=date
+    }}
+  <label>
+    Notes:
+  </label>
+    {{textarea
+    class='spec-note-input'
+    type='text'
+    value=notes
+    }}
   <button {{action 'saveReminder' preventDefault=false }}>Save</button>
-</div>
+</form>
