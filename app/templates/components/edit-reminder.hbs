@@ -1,7 +1,4 @@
-<form {{
-  action 'saveReminder'
-  on='submit'
-}}>
+<form>
   <label>
     Title:
     </label>
@@ -25,6 +22,6 @@
     type='text'
     value={{model.notes}} />
   {{#link-to 'reminders.reminder' model.id}}
-    <button>Save</button>
+    <button{{ action 'saveReminder'}}>Save</button>
   {{/link-to}}
 </form>

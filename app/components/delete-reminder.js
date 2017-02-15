@@ -5,6 +5,7 @@ export default Ember.Component.extend({
 
   actions: {
     deleteReminder() {
+      console.log(this);
       this.get('store')
       .findRecord('reminder', this.model.id)
       .then(reminder => {
