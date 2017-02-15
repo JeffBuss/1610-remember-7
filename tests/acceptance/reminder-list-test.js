@@ -83,3 +83,14 @@ test('editing notes', function(assert) {
     })
   })
 })
+
+test('deleting notes', function(assert) {
+  server.createList('reminder', 5);
+
+  visit('/reminders/1');
+  click('.delete-button');
+
+  andThen(function() {
+    assert.equal(find('.spec-reminder-item').length, 4, 'should delete the reminder from page when clicked')
+  })
+})
