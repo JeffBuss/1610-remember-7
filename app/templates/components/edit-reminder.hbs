@@ -24,6 +24,7 @@
     class='spec-note-input'
     type='text'
     value={{model.notes}} />
-
-  <button {{action 'saveReminder' preventDefault=false }}>Save</button>
+  {{#link-to 'reminders.reminder' model.id}}
+    <button {{action 'saveReminder' }}>Save</button>
+  {{/link-to}}
 </form>
