@@ -9,10 +9,10 @@ export default Ember.Component.extend({
     },
     saveReminder() {
       const reminder = this.getProperties('title', 'date', 'notes');
+      console.log(reminder)
       this.set('reminder', reminder).save().then(() => {
         this.transitionTo('/reminders')
       })
-      console.log("You saved a thing!");
     }
   }
 });
