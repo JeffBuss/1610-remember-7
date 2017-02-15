@@ -78,8 +78,24 @@ test('editing notes', function(assert) {
       click('.spec-save-btn');
 
       andThen(function() {
-        assert.equal(find('.spec-reminder-title').test().trim(), 'I can change the title', 'should match the new title')
+        assert.equal(find('.spec-reminder-title:first').text().trim(), 'I can change the title', 'should match the new title')
       })
+    })
+  })
+})
+
+test('undo changes', function(assert) {
+  server.createList('reminder', 5);
+
+  visit('/reminders/1');
+  click('.edit-button');
+
+  andThen(function() {
+    fillIn('.spec-title-input', "WOOOOO!");
+    click('.spec-undo-btn');
+
+    andThen(function() {
+    assert.equal(Ember.$('.spec-reminder-title:first').text().trim(), Ember.$('.spec-reminder-title:first').text().trim(), 'the title value is unchanged')
     })
   })
 })
