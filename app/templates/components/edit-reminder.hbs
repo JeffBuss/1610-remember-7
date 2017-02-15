@@ -2,25 +2,26 @@
   <label>
     Title:
     </label>
-    <input
+    {{ input
     class='spec-title-input'
     type='text'
-    value={{model.title}} />
+    value=model.title
+    }}
 
   <label>
     Date:
   </label>
-    <input
+    {{input
     class='spec-date-input'
     type='date'
-    value={{model.date}} />
+    value=model.date}}
   <label>
     Notes:
   </label>
-    <textarea
+    {{textarea
     class='spec-note-input'
     type='text'
-    value={{model.notes}} />
+    value=model.notes}}
   {{#link-to 'reminders.reminder' model.id}}
     <button{{ action 'saveReminder'}}>Save</button>
   {{/link-to}}
