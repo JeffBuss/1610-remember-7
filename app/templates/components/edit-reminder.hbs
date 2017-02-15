@@ -13,18 +13,17 @@
   <label>
     Date:
   </label>
-    {{input
+    <input
     class='spec-date-input'
     type='date'
-    value=date
-    }}
+    value={{model.date}} />
   <label>
     Notes:
   </label>
-    {{textarea
+    <textarea
     class='spec-note-input'
     type='text'
-    value=notes
-    }}
+    value={{model.notes}} />
+
   <button {{action 'saveReminder' preventDefault=false }}>Save</button>
 </form>
