@@ -41,7 +41,7 @@ test('add new note prompt', function(assert) {
 
 test('clicking new note button', function(assert) {
   visit('/');
-  click('button');
+  click('.add-reminder-btn');
 
   andThen(function() {
     assert.equal(currentURL(), '/reminders/new', 'should redirect to add a new item');
