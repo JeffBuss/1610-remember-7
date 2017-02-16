@@ -31,9 +31,17 @@ test('clicking on an individual item', function(assert) {
   });
 });
 
+test('add new note prompt', function(assert) {
+  visit('/');
+
+  andThen(function() {
+    assert.equal(find('.spec-no-reminder-prompt').length, 1, 'should display a prompt to create a reminder when none are present')
+  })
+})
+
 test('clicking new note button', function(assert) {
   visit('/');
-  click('button');
+  click('.add-reminder-btn');
 
   andThen(function() {
     assert.equal(currentURL(), '/reminders/new', 'should redirect to add a new item');
@@ -56,10 +64,23 @@ test('adding new notes', function(assert) {
   })
 })
 
-test('add new note prompt', function(assert) {
-  visit('/');
+test('editing notes', function(assert) {
+  server.createList('reminder', 5);
+  var newTitle = 'I can change the title'
+
+  visit('/reminders/1');
+  click('.edit-button');
 
   andThen(function() {
-    assert.equal(find('.spec-no-reminder-prompt').length, 1, 'should display a prompt to create a reminder when none are present')
+    assert.equal(currentURL(), '/reminders/1/edit', 'should redirect to the edit page');
+
+    andThen(function() {
+      fillIn('.spec-title-input', 'I can change the title');
+      click('.spec-save-btn');
+
+      andThen(function() {
+        assert.equal(find('.spec-reminder-title:first').text().trim(), newTitle, 'should match the new title')
+      })
+    })
   })
 })
