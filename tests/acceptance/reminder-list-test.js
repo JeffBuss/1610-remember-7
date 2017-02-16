@@ -41,7 +41,7 @@ test('add new note prompt', function(assert) {
 
 test('clicking new note button', function(assert) {
   visit('/');
-  click('button');
+  click('.add-reminder-btn');
 
   andThen(function() {
     assert.equal(currentURL(), '/reminders/new', 'should redirect to add a new item');
@@ -66,6 +66,7 @@ test('adding new notes', function(assert) {
 
 test('editing notes', function(assert) {
   server.createList('reminder', 5);
+  var newTitle = 'I can change the title'
 
   visit('/reminders/1');
   click('.edit-button');
@@ -78,7 +79,7 @@ test('editing notes', function(assert) {
       click('.spec-save-btn');
 
       andThen(function() {
-        assert.equal(find('.spec-reminder-title:first').text().trim(), 'I can change the title', 'should match the new title')
+        assert.equal(find('.spec-reminder-title:first').text().trim(), newTitle, 'should match the new title')
       })
     })
   })
