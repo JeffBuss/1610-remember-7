@@ -10,6 +10,13 @@ export default Ember.Component.extend({
       .then(reminder => {
         reminder.save()
       })
+    },
+    undo() {
+      this.get('store')
+      .findRecord('reminder', this.model.id)
+      .then(reminder => {
+        reminder.rollbackAttributes();
+      })
     }
   }
 });

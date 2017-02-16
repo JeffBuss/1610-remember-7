@@ -25,4 +25,8 @@
   {{#link-to 'reminders.reminder' model.id}}
     <button class="spec-save-btn" {{ action 'saveReminder'}}>Save</button>
   {{/link-to}}
+  {{#link-to 'reminders.reminder' model.id}}
+    <button class="spec-undo-btn" {{ action 'undo' }}>Undo</button>
+  {{/link-to}}
+
 </form>
